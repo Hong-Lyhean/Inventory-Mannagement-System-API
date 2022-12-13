@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+
+    protected $guarded = ["id"];
+
+    public function staff()
+    {
+        return $this->hasMany(Staff::class, "role_id");
+    }
 }
