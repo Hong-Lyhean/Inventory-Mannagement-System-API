@@ -10,6 +10,7 @@ class Payment extends Model
     use HasFactory;
 
     protected $guarded = ["id"];
+    protected $table = "payments";
 
     public function order_detail()
     {

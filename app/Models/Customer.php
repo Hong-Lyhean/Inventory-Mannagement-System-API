@@ -10,6 +10,7 @@ class Customer extends Model
     use HasFactory;
 
     protected $guarded = ["id"];
+    protected $table = "customers";
 
     public function staff()
     {

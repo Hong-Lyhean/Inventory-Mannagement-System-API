@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
             $table->string("name", 100);
+            $table->string("image")->nullable();
             $table->string("address", 255)->nullable();
             $table->integer("phone");
             $table->integer("fax");
-            $table->string("email", 255)->unique();
+            $table->string("email", 255)->nullable()->unique();
             $table->string("other_detail", 255)->nullable();
             $table->timestamps();
         });

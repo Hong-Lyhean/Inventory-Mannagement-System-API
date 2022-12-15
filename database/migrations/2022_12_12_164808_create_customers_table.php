@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string("first_name", 40);
             $table->string("last _name", 40);
+            $table->enum("gender", ["M", "F"])->default("M");
             $table->string("address", 255)->nullable();
             $table->integer("phone")->unique();
-            $table->string("email", 255)->unique();
+            $table->string("email", 255)->unique()->nullable();
 
             $table->unsignedBigInteger("staff_id")->nullable();
             $table->foreign("staff_id")
