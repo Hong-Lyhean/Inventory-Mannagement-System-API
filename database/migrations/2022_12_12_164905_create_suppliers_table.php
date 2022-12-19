@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string("name", 100);
             $table->string("image")->nullable();
             $table->string("address", 255)->nullable();
-            $table->integer("phone");
-            $table->integer("fax");
+            $table->integer("phone")->unique();
+            $table->bigInteger("fax")->unique();
             $table->string("email", 255)->nullable()->unique();
             $table->string("other_detail", 255)->nullable();
             $table->timestamps();

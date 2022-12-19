@@ -22,7 +22,8 @@ use App\Http\Controllers\PaymentController;
 |
 */
 
-Route::apiResource('suppliers',SupplierController::class);
+Route::apiResource('suppliers',SupplierController::class)
+    ->where(['supplier' => '[0-9]+']);
 Route::apiResource('products',ProductController::class);
 Route::apiResource('categories',CategoryController::class);
 Route::apiResource('staffs',StaffController::class);
